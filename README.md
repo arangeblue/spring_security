@@ -57,3 +57,29 @@
 4. Lombok
 5. H2
 
+## MESSAGE
+
+1. SecurityMessageConfig.java : message 설정 코드를 작성
+2. resource / message 폴더에 message.properties 파일 생성 및 메세지 설정
+3. 적용
+
+
+
+## Security TEST
+
+1. 테스팅
+- @WithMockUser : 간단하게 유저정보와 role를 입력한 후 특정 페이지를 요청했을 때 반응을 확인할 수 있다(모든 인스턴스에서 동작하지 않을 수 있음)
+  - username : user의 이름 파라미터
+  - password : user의 비밀번호 파라미터
+  - roles : user의 권한객체 파라미터
+- @WithAnonymousUser : 익명의 유저가 특정 페이지를 요청했을 때 반응을 볼 수 있다.
+- @WithUserDetails : 지정한 사용자 이름으로(실제 사용자가 존재해야 함) 계정을 조회한 후에 UserDetails 객체를 조회하여 보안 컨텍스트를 로드, withMockUser보다 좀 더 섬세한 작업이 가능하다.
+  - value : 지정한 사용자의 이름 파라미터
+  - userDetailsServiceBeanName : UserDetails 조회 서비스의 빈 이름( 하나만 존재한다면 생략가능 )
+  - setupBefore 
+
+
+2. 어노테이션을 만들어서 테스트에 적용
+   - WithMockAdmin.java
+
+

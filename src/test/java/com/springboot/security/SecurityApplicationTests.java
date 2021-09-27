@@ -99,7 +99,7 @@ class SecurityApplicationTests {
 	}
 	
 
-	@WithUserDetails(value = "test@naver.com")
+	@WithUserDetails(value = "test@naver.com", setupBefore = TestExecutionEvent.TEST_EXECUTION)
 	@Test
 	public void test_security_with_WithUserDetails() throws Exception{
 		
